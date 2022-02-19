@@ -5,3 +5,25 @@
 h1 {
   text-align: center;
 }
+
+.Box {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+}
+
+.gameBoard {
+  margin: 0 auto;
+  width: 310px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.Noughts {
+  background-color: green;
+}
+
+.Crosses {
+  background-color: pink;
+}
