@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const Game = (playerTurn, setPlayerTurn) => {
+const Game = ({playerTurn, setPlayerTurn}) => {
   const tileSymbols = {
-    1: "❌",
+    1: "",
     2: "",
     3: "",
     4: "",
@@ -14,46 +14,67 @@ const Game = (playerTurn, setPlayerTurn) => {
   };
 
   const [gameSymbol, setGameSymbol] = useState(tileSymbols);
-
   const playerClick = (boxId) => {
+  
     if (playerTurn == 1) {
-      tileSymbols[boxId] = "⭕️";
+      console.log("playerOne")
+      setGameSymbol((prev)=>{
+        console.log(prev)
+        const newObj = {...prev}
+        newObj[boxId] = "⭕️"
+        console.log(newObj)
+        return newObj
+      })
+      setPlayerTurn(2)
     } else {
-      tileSymbols[boxId] = "❌";
+      setGameSymbol((prev)=>{
+        console.log(prev)
+        const newObj = {...prev}
+        newObj[boxId] = "❌"
+        console.log(newObj)
+        return newObj
+      })
+      setPlayerTurn(1)
+
+      
     }
+    
   };
 
   return (
     <div>
       <h2>Noughts and Crosses</h2>
       <div className="gameBoard">
-        <div className={`Box ${tileSymbols[1]}`} id="1">
-          <p>{tileSymbols[1]}</p>
+        <div className={`Box`} onClick={(e) => {
+          playerClick(1)}
+        }>
+        <p>{gameSymbol[1]}</p>
         </div>
-        <div className="Box" id="2">
-          2
+        <div className={`Box`} onClick={() => {playerClick(2)}}>
+        <p>{gameSymbol[2]}</p>
         </div>
-        <div className="Box" id="3">
-          3
+        <div className={`Box`} onClick={() => {playerClick(3)}}>
+        <p>{gameSymbol[3]}</p>
         </div>
-        <div className="Box" id="4">
-          4
+        <div className={`Box`} onClick={() => {playerClick(4)}}>
+        <p>{gameSymbol[4]}</p>
         </div>
-        <div className="Box" id="5">
-          5
+        <div className={`Box`} onClick={() => {playerClick(5)}}>
+        <p>{gameSymbol[5]}</p>
         </div>
-        <div className="Box" id="6">
-          6
+        <div className={`Box`} onClick={() => {playerClick(6)}}>
+        <p>{gameSymbol[6]}</p>
         </div>
-        <div className="Box" id="7">
-          7
+        <div className={`Box`} onClick={() => {playerClick(7)}}>
+        <p>{gameSymbol[7]}</p>
         </div>
-        <div className="Box" id="8">
-          8
+        <div className={`Box`} onClick={() => {playerClick(8)}}>
+        <p>{gameSymbol[8]}</p>
         </div>
-        <div className="Box" id="9">
-          9
+        <div className={`Box`} onClick={() => {playerClick(9)}}>
+        <p>{gameSymbol[9]}</p>
         </div>
+        
       </div>
     </div>
   );

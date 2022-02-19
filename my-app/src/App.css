@@ -10,6 +10,15 @@ h1 {
   height: 100px;
   width: 100px;
   border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+
+}
+.Box > p {
+  font-size: 68px;
+  padding: 0px;
 }
 
 .gameBoard {
