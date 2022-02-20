@@ -1,22 +1,12 @@
 export const checkWin = (gameBoard) => {
-  /*
-Horizontal
-  1 2 3
-  4 5 6
-  7 8 9
-
-  Vertical
-  1 4 7
-  2 5 8
-  3 6 9
-
-  Diagonal
-
-  1 5 9
-  3 5 7
-*/
-
-  console.log(horizontalCheck(gameBoard), "<<<<<<<<<");
+  if (
+    verticalCheck(gameBoard) ||
+    horizontalCheck(gameBoard) ||
+    diagonalCheck(gameBoard)
+  ) {
+    return true;
+  }
+  return false;
 };
 
 const horizontalCheck = (gameBoard) => {
@@ -24,12 +14,6 @@ const horizontalCheck = (gameBoard) => {
   const fourToSix = [gameBoard[4], gameBoard[5], gameBoard[6]];
   const sevenToNine = [gameBoard[7], gameBoard[8], gameBoard[9]];
 
-  if (
-    oneToThree.every((element) => element === "⭕️") ||
-    oneToThree.every((element) => element === "❌")
-  ) {
-    return true;
-  }
   if (
     oneToThree.every((element) => element === "⭕️") ||
     oneToThree.every((element) => element === "❌")
@@ -50,20 +34,46 @@ const horizontalCheck = (gameBoard) => {
   }
 }; // func end
 
-// const verticalCheck = (gameBoard) => {
-//   const oneToSeven = [gameBoard[1], gameBoard[4], gameBoard[7]]
-//   const twoToEight = [gameBoard[2], gameBoard[5], gameBoard[8]]
-//   const threeToNine = [gameBoard[3], gameBoard[6], gameBoard[9]]
+const verticalCheck = (gameBoard) => {
+  const oneToSeven = [gameBoard[1], gameBoard[4], gameBoard[7]];
+  const twoToEight = [gameBoard[2], gameBoard[5], gameBoard[8]];
+  const threeToNine = [gameBoard[3], gameBoard[6], gameBoard[9]];
 
-//   if () {
+  if (
+    oneToSeven.every((element) => element === "⭕️") ||
+    oneToSeven.every((element) => element === "❌")
+  ) {
+    return true;
+  } else if (
+    twoToEight.every((element) => element === "⭕️") ||
+    twoToEight.every((element) => element === "❌")
+  ) {
+    return true;
+  } else if (
+    threeToNine.every((element) => element === "⭕️") ||
+    threeToNine.every((element) => element === "❌")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
-//   } else if () {
+const diagonalCheck = (gameBoard) => {
+  const oneToNine = [gameBoard[1], gameBoard[5], gameBoard[9]];
+  const threeToSeven = [gameBoard[3], gameBoard[5], gameBoard[7]];
 
-//   } else if () {
-
-//   } else {
-//     return false
-//   }
-// };
-
-const diagonalCheck = () => {};
+  if (
+    oneToNine.every((element) => element === "⭕️") ||
+    oneToNine.every((element) => element === "❌")
+  ) {
+    return true;
+  } else if (
+    threeToSeven.every((element) => element === "⭕️") ||
+    threeToSeven.every((element) => element === "❌")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};

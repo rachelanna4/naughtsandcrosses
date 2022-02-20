@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { checkWin } from "../utils/utils";
 
-const Game = ({ playerTurn, setPlayerTurn }) => {
+const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
   const tileSymbols = {
     1: "",
     "1clicked": false,
@@ -24,21 +24,23 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
   };
 
   const [gameSymbol, setGameSymbol] = useState(tileSymbols);
+  const [hasWon, setHasWon] = useState(false);
+  const [winningPlayer, setWinningPlayer] = useState("");
 
   useEffect(() => {
-    checkWin(gameSymbol);
+    setHasWon(checkWin(gameSymbol));
   }, [gameSymbol]);
 
-  console.log(gameSymbol);
   const playerClick = (boxId) => {
-    if (playerTurn == 1) {
+    if (playerTurn === "⭕️") {
       setGameSymbol((prev) => {
         const newObj = { ...prev };
         newObj[`${boxId}clicked`] = true;
         newObj[boxId] = "⭕️";
         return newObj;
       });
-      setPlayerTurn(2);
+      setPlayerTurn("❌");
+      setWinningPlayer("⭕️");
     } else {
       setGameSymbol((prev) => {
         const newObj = { ...prev };
@@ -47,18 +49,33 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         return newObj;
       });
 
-      setPlayerTurn(1);
+      setPlayerTurn("⭕️");
+      setWinningPlayer("❌");
     }
+  };
+
+  const resetGame = () => {
+    if (hasWon) {
+      setPlayerScores((prev) => {
+        const newObj = { ...prev };
+        newObj[winningPlayer]++;
+        return newObj;
+      });
+    }
+    setGameSymbol(tileSymbols);
+    setHasWon(false);
+    setPlayerTurn(1);
+    setWinningPlayer("");
   };
 
   return (
     <div>
       <h2>Noughts and Crosses</h2>
-      <div className='gameBoard'>
+      <div className="gameBoard">
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["1clicked"] == false) {
+            if (gameSymbol["1clicked"] === false) {
               playerClick(1);
             }
           }}
@@ -68,7 +85,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["2clicked"] == false) {
+            if (gameSymbol["2clicked"] === false) {
               playerClick(2);
             }
           }}
@@ -78,7 +95,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["3clicked"] == false) {
+            if (gameSymbol["3clicked"] === false) {
               playerClick(3);
             }
           }}
@@ -88,7 +105,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["4clicked"] == false) {
+            if (gameSymbol["4clicked"] === false) {
               playerClick(4);
             }
           }}
@@ -98,7 +115,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["5clicked"] == false) {
+            if (gameSymbol["5clicked"] === false) {
               playerClick(5);
             }
           }}
@@ -108,7 +125,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["6clicked"] == false) {
+            if (gameSymbol["6clicked"] === false) {
               playerClick(6);
             }
           }}
@@ -118,7 +135,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["7clicked"] == false) {
+            if (gameSymbol["7clicked"] === false) {
               playerClick(7);
             }
           }}
@@ -128,7 +145,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["8clicked"] == false) {
+            if (gameSymbol["8clicked"] === false) {
               playerClick(8);
             }
           }}
@@ -138,14 +155,22 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["9clicked"] == false) {
+            if (gameSymbol["9clicked"] === false) {
               playerClick(9);
             }
           }}
         >
           <p>{gameSymbol[9]}</p>
         </div>
+        {hasWon ? <h4> Player {winningPlayer} is the winner!</h4> : null}
       </div>
+      <button
+        onClick={() => {
+          resetGame();
+        }}
+      >
+        Reset Game
+      </button>
     </div>
   );
 };
