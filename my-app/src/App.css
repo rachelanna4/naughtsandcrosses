@@ -14,11 +14,11 @@ h1 {
   justify-content: center;
   justify-self: center;
   align-items: center;
-
 }
 .Box > p {
   font-size: 68px;
   padding: 0px;
+  user-select: none;
 }
 
 .gameBoard {
@@ -27,12 +27,4 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-}
-
-.Noughts {
-  background-color: green;
-}
-
-.Crosses {
-  background-color: pink;
 }

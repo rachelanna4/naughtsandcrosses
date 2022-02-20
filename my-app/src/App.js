@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div>
-      <Header playerTurn={playerTurn} setPlayerTurn={setPlayerTurn} />
-      <Game playerTurn={playerTurn} setPlayerTurn={setPlayerTurn}/>
+      <Header playerTurn={playerTurn} />
+      <Game playerTurn={playerTurn} setPlayerTurn={setPlayerTurn} />
     </div>
   );
 }

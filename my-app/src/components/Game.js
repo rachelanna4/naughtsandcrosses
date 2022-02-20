@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { checkWin } from "../utils/utils";
 
 const Game = ({ playerTurn, setPlayerTurn }) => {
   const tileSymbols = {
@@ -23,9 +24,14 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
   };
 
   const [gameSymbol, setGameSymbol] = useState(tileSymbols);
+
+  useEffect(() => {
+    checkWin(gameSymbol);
+  }, [gameSymbol]);
+
+  console.log(gameSymbol);
   const playerClick = (boxId) => {
     if (playerTurn == 1) {
-      console.log("playerOne");
       setGameSymbol((prev) => {
         const newObj = { ...prev };
         newObj[`${boxId}clicked`] = true;
@@ -38,9 +44,9 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         const newObj = { ...prev };
         newObj[boxId] = "❌";
         newObj[`${boxId}clicked`] = true;
-        console.log(newObj);
         return newObj;
       });
+
       setPlayerTurn(1);
     }
   };
@@ -48,7 +54,7 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
   return (
     <div>
       <h2>Noughts and Crosses</h2>
-      <div className="gameBoard">
+      <div className='gameBoard'>
         <div
           className={`Box`}
           onClick={() => {
@@ -72,8 +78,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["3clicked"] == false) {
-              playerClick(3); 
+            if (gameSymbol["3clicked"] == false) {
+              playerClick(3);
             }
           }}
         >
@@ -82,8 +88,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["4clicked"] == false) {
-              playerClick(4); 
+            if (gameSymbol["4clicked"] == false) {
+              playerClick(4);
             }
           }}
         >
@@ -92,8 +98,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["5clicked"] == false) {
-              playerClick(5); 
+            if (gameSymbol["5clicked"] == false) {
+              playerClick(5);
             }
           }}
         >
@@ -102,8 +108,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["6clicked"] == false) {
-              playerClick(6); 
+            if (gameSymbol["6clicked"] == false) {
+              playerClick(6);
             }
           }}
         >
@@ -112,8 +118,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["7clicked"] == false) {
-              playerClick(7); 
+            if (gameSymbol["7clicked"] == false) {
+              playerClick(7);
             }
           }}
         >
@@ -122,8 +128,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["8clicked"] == false) {
-              playerClick(8); 
+            if (gameSymbol["8clicked"] == false) {
+              playerClick(8);
             }
           }}
         >
@@ -132,8 +138,8 @@ const Game = ({ playerTurn, setPlayerTurn }) => {
         <div
           className={`Box`}
           onClick={() => {
-            if(gameSymbol["9clicked"] == false) {
-              playerClick(9); 
+            if (gameSymbol["9clicked"] == false) {
+              playerClick(9);
             }
           }}
         >
