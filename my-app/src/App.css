@@ -1,9 +1,18 @@
 .App {
   text-align: center;
+  
 }
 
 h1 {
   text-align: center;
+  border-bottom: black 2px;
+  
+}
+.main {
+  background-color: #ACB0BD;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .Box {
@@ -14,6 +23,7 @@ h1 {
   justify-content: center;
   justify-self: center;
   align-items: center;
+  background-color: rgb(62, 49, 245);
 }
 .Box > p {
   font-size: 68px;
@@ -27,4 +37,20 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+}
+
+.mainHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.scoreMain {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.score {
+  margin-right: 40px;
 }

@@ -8,7 +8,7 @@ function App() {
   const [playerScores, setPlayerScores] = useState({ "⭕️": 0, "❌": 0 });
 
   return (
-    <div>
+    <div className="main">
       <Header playerTurn={playerTurn} playerScores={playerScores} />
       <Game
         playerTurn={playerTurn}
