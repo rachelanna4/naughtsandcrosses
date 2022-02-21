@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Shizuru&display=swap");
+
+* {
+  font-family: "Shizuru", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -5,12 +11,14 @@
 h1 {
   text-align: center;
   border-bottom: black 2px;
+  font-size: 5em;
 }
 .main {
-  background-color: #acb0bd;
+  background-color: black;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 img {
@@ -30,7 +38,6 @@ img {
   justify-content: center;
   justify-self: center;
   align-items: center;
-  background-color: rgb(62, 49, 245);
 }
 
 .Box > p {
@@ -68,6 +75,17 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 3em;
+  font-size: 20px;
+}
+
+.playerTurnFont {
+  font-size: 40px;
 }
 
 .scoreMain {
@@ -77,4 +95,46 @@ img {
 
 .score {
   margin-right: 40px;
+}
+
+.userIcon {
+  height: 4em;
+  width: 4em;
+  margin-left: 20px;
+}
+
+.winnerIcon {
+  height: 10em;
+  width: 10em;
+}
+
+.winnerText {
+  font-size: 40px;
+}
+
+.footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.resetButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 5px solid green;
+  padding: 10px 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 3em;
+  }
 }
