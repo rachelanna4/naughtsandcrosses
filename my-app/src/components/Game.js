@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { checkWin } from "../utils/utils";
+import playerAvatar from "../utils/playerAvatar.json";
 
 const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
   const tileSymbols = {
@@ -70,100 +71,186 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
 
   return (
     <div>
-      <h2>Noughts and Crosses</h2>
       <div className="gameBoard">
         <div
-          className={`Box`}
+          className={`Box invisible-top invisible-left`}
           onClick={() => {
-            if (gameSymbol["1clicked"] === false) {
+            if (gameSymbol["1clicked"] === false && hasWon === false) {
               playerClick(1);
+              // gameSymbol[1] === "⭕️"
+              //   ? test = playerAvatar.playerOne
+              //   : test =playerAvatar.playerTwo
             }
           }}
         >
-          <p>{gameSymbol[1]}</p>
+          <img
+            className={gameSymbol["1clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[1] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-top`}
           onClick={() => {
-            if (gameSymbol["2clicked"] === false) {
+            if (gameSymbol["2clicked"] === false && hasWon === false) {
               playerClick(2);
             }
           }}
         >
-          <p>{gameSymbol[2]}</p>
+          <img
+            className={gameSymbol["2clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[2] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-top invisible-right`}
           onClick={() => {
-            if (gameSymbol["3clicked"] === false) {
+            if (gameSymbol["3clicked"] === false && hasWon === false) {
               playerClick(3);
             }
           }}
         >
-          <p>{gameSymbol[3]}</p>
+          <img
+            className={gameSymbol["3clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[3] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-left`}
           onClick={() => {
-            if (gameSymbol["4clicked"] === false) {
+            if (gameSymbol["4clicked"] === false && hasWon === false) {
               playerClick(4);
             }
           }}
         >
-          <p>{gameSymbol[4]}</p>
+          <img
+            className={gameSymbol["4clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[4] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
           className={`Box`}
           onClick={() => {
-            if (gameSymbol["5clicked"] === false) {
+            if (gameSymbol["5clicked"] === false && hasWon === false) {
               playerClick(5);
             }
           }}
         >
-          <p>{gameSymbol[5]}</p>
+          <img
+            className={gameSymbol["5clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[5] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-right`}
           onClick={() => {
-            if (gameSymbol["6clicked"] === false) {
+            if (gameSymbol["6clicked"] === false && hasWon === false) {
               playerClick(6);
             }
           }}
         >
-          <p>{gameSymbol[6]}</p>
+          <img
+            className={gameSymbol["6clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[6] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-bottom invisible-left `}
           onClick={() => {
-            if (gameSymbol["7clicked"] === false) {
+            if (gameSymbol["7clicked"] === false && hasWon === false) {
               playerClick(7);
             }
           }}
         >
-          <p>{gameSymbol[7]}</p>
+          <img
+            className={gameSymbol["7clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[7] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-bottom`}
           onClick={() => {
-            if (gameSymbol["8clicked"] === false) {
+            if (gameSymbol["8clicked"] === false && hasWon === false) {
               playerClick(8);
             }
           }}
         >
-          <p>{gameSymbol[8]}</p>
+          <img
+            className={gameSymbol["8clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[8] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
         <div
-          className={`Box`}
+          className={`Box invisible-bottom invisible-right`}
           onClick={() => {
-            if (gameSymbol["9clicked"] === false) {
+            if (gameSymbol["9clicked"] === false && hasWon === false) {
               playerClick(9);
             }
           }}
         >
-          <p>{gameSymbol[9]}</p>
+          <img
+            className={gameSymbol["9clicked"] ? "" : "invisible"}
+            alt="Elmo"
+            src={
+              gameSymbol[9] === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
         </div>
-        {hasWon ? <h4> Player {winningPlayer} is the winner!</h4> : null}
       </div>
+      {hasWon ? (
+        <h4>
+          <img
+            alt="Elmo"
+            src={
+              winningPlayer === "⭕️"
+                ? playerAvatar.playerOne
+                : playerAvatar.playerTwo
+            }
+          />
+          is the winner!
+        </h4>
+      ) : null}
       <button
         onClick={() => {
           resetGame();

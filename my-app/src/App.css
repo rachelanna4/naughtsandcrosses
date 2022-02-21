@@ -1,39 +1,64 @@
 .App {
   text-align: center;
-  
 }
 
 h1 {
   text-align: center;
   border-bottom: black 2px;
-  
 }
 .main {
-  background-color: #ACB0BD;
+  background-color: #acb0bd;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+img {
+  height: 60px;
+  width: 60px;
+}
+
+.invisible {
+  display: none;
+}
+
 .Box {
-  height: 100px;
-  width: 100px;
-  border: 2px solid black;
+  height: 150px;
+  width: 150px;
+  border: 3px solid white;
   display: flex;
   justify-content: center;
   justify-self: center;
   align-items: center;
   background-color: rgb(62, 49, 245);
 }
+
 .Box > p {
   font-size: 68px;
   padding: 0px;
   user-select: none;
 }
 
+.invisible-top {
+  border-top: none;
+}
+
+.invisible-right {
+  border-right: none;
+}
+
+.invisible-left {
+  border-left: none;
+}
+
+.invisible-bottom {
+  border-bottom: none;
+}
+
 .gameBoard {
   margin: 0 auto;
-  width: 310px;
+  height: 450px;
+  width: 450px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -48,7 +73,6 @@ h1 {
 .scoreMain {
   display: flex;
   flex-direction: row;
-
 }
 
 .score {
