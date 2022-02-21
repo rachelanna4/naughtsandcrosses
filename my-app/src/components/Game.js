@@ -65,13 +65,13 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
     }
     setGameSymbol(tileSymbols);
     setHasWon(false);
-    setPlayerTurn(1);
+    setPlayerTurn("⭕️");
     setWinningPlayer("");
   };
 
   return (
     <div>
-      <div className='gameBoard'>
+      <div className="gameBoard">
         <div
           className={`Box invisible-top invisible-left`}
           onClick={() => {
@@ -85,7 +85,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["1clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[1] === "⭕️"
                 ? playerAvatar.playerOne
@@ -103,7 +103,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["2clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[2] === "⭕️"
                 ? playerAvatar.playerOne
@@ -121,7 +121,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["3clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[3] === "⭕️"
                 ? playerAvatar.playerOne
@@ -139,7 +139,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["4clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[4] === "⭕️"
                 ? playerAvatar.playerOne
@@ -157,7 +157,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["5clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[5] === "⭕️"
                 ? playerAvatar.playerOne
@@ -175,7 +175,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["6clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[6] === "⭕️"
                 ? playerAvatar.playerOne
@@ -193,7 +193,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["7clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[7] === "⭕️"
                 ? playerAvatar.playerOne
@@ -211,7 +211,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["8clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[8] === "⭕️"
                 ? playerAvatar.playerOne
@@ -229,7 +229,7 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         >
           <img
             className={gameSymbol["9clicked"] ? "" : "invisible"}
-            alt='Elmo'
+            alt="Elmo"
             src={
               gameSymbol[9] === "⭕️"
                 ? playerAvatar.playerOne
@@ -239,20 +239,20 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
         </div>
       </div>
       {hasWon ? (
-        <h4 className='footer'>
+        <h4 className="footer">
           <img
-            className='winnerIcon'
-            alt='Elmo'
+            className="winnerIcon"
+            alt="Elmo"
             src={
               winningPlayer === "⭕️"
                 ? playerAvatar.playerOne
                 : playerAvatar.playerTwo
             }
           />
-          <span className='winnerText'>is the winner!</span>
+          <span className="winnerText">is the winner!</span>
         </h4>
       ) : null}
-      <div className='resetButton'>
+      <div className="resetButton">
         <button
           onClick={() => {
             resetGame();
