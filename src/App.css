@@ -82,13 +82,23 @@ img {
 }
 
 h3 {
+  display: flex;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
+  align-items: center;
   margin-bottom: 3em;
   font-size: 20px;
+  min-height: 80px;
 }
 
 .playerTurnFont {
   font-size: 40px;
+}
+
+.mattMessage {
+  color: green;
 }
 
 .scoreMain {
@@ -136,8 +146,83 @@ button {
   padding: 10px 15px;
 }
 
+.fade-in-image {
+  animation: fadeIn 6s;
+  -webkit-animation: fadeIn 6s;
+  -moz-animation: fadeIn 6s;
+  -o-animation: fadeIn 6s;
+  -ms-animation: fadeIn 6s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 3em;
+    font-size: 2.6em;
+  }
+
+  .playerTurnFont {
+    font-size: 1.4em;
+  }
+
+  .Box {
+    height: 85px;
+    width: 85px;
+  }
+
+  .gameBoard {
+    height: 245px;
+    width: 245px;
+  }
+
+  img {
+    height: 60px;
+    width: 60px;
+  }
+
+  button {
+    font-size: 20px;
   }
 }

@@ -2,7 +2,13 @@ import { useState, useEffect } from "react";
 import { checkWin } from "../utils/utils";
 import playerAvatar from "../utils/playerAvatar.json";
 
-const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
+const Game = ({
+  playerTurn,
+  setPlayerTurn,
+  setPlayerScores,
+  redirect,
+  setRedirect,
+}) => {
   const tileSymbols = {
     1: "",
     "1clicked": false,
@@ -53,6 +59,10 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
       setPlayerTurn("⭕️");
       setWinningPlayer("❌");
     }
+    setRedirect(true);
+    setTimeout(() => {
+      window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }, 4000);
   };
 
   const resetGame = () => {
@@ -84,7 +94,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["1clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["1clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[1] === "⭕️"
@@ -102,7 +114,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["2clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["2clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[2] === "⭕️"
@@ -120,7 +134,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["3clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["3clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[3] === "⭕️"
@@ -138,7 +154,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["4clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["4clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[4] === "⭕️"
@@ -156,7 +174,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["5clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["5clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[5] === "⭕️"
@@ -174,7 +194,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["6clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["6clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[6] === "⭕️"
@@ -192,7 +214,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["7clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["7clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[7] === "⭕️"
@@ -210,7 +234,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["8clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["8clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[8] === "⭕️"
@@ -228,7 +254,9 @@ const Game = ({ playerTurn, setPlayerTurn, setPlayerScores }) => {
           }}
         >
           <img
-            className={gameSymbol["9clicked"] ? "" : "invisible"}
+            className={`fade-in-image ${
+              gameSymbol["9clicked"] ? "" : "invisible"
+            }`}
             alt="Elmo"
             src={
               gameSymbol[9] === "⭕️"

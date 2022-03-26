@@ -1,15 +1,15 @@
 import playerAvatar from "../utils/playerAvatar.json";
 
-const Header = ({ playerTurn, playerScores }) => {
+const Header = ({ playerTurn, redirect }) => {
   return (
-    <header className='mainHeader'>
-      <h1>Noughts & Cookies </h1>
-      <div className='scoreMain'>
+    <header className="mainHeader">
+      <h1>Noughts & Crosses </h1>
+      <div className="scoreMain">
         {/* <img src={playerAvatar.playerOne} alt="Elmo" />
         <img src={playerAvatar.playerTwo} alt="Cookie Monster" /> */}
       </div>
       <h3>
-        <img
+        {/* <img
           className='userIcon'
           alt='Elmo'
           src={
@@ -17,8 +17,19 @@ const Header = ({ playerTurn, playerScores }) => {
               ? playerAvatar.playerOne
               : playerAvatar.playerTwo
           }
-        />
-        <span className='playerTurnFont'> Your turn</span>
+        /> */}
+        <span
+          className={`playerTurnFont  ${
+            redirect ? "mattMessage fade-in-image" : ""
+          }`}
+        >
+          {" "}
+          {!redirect &&
+            (playerTurn === "⭕️"
+              ? "Player 1 it's your turn"
+              : "Player 2 it's your turn")}
+          {redirect && "Never gonna give up Rick Rolling you Matt"}
+        </span>
       </h3>
     </header>
   );
