@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/noughts-and-crosses/static/css/main.d18fbdb3.css",
+    "main.js": "/noughts-and-crosses/static/js/main.9344aa33.js",
+    "index.html": "/noughts-and-crosses/index.html",
+    "main.d18fbdb3.css.map": "/noughts-and-crosses/static/css/main.d18fbdb3.css.map",
+    "main.9344aa33.js.map": "/noughts-and-crosses/static/js/main.9344aa33.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d18fbdb3.css",
+    "static/js/main.9344aa33.js"
+  ]
+}
