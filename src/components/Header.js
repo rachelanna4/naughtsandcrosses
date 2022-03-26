@@ -28,7 +28,7 @@ const Header = ({ playerTurn, redirect }) => {
             (playerTurn === "⭕️"
               ? "Player 1 it's your turn"
               : "Player 2 it's your turn")}
-          {redirect && "Never gonna give up Rick Rolling you Matt"}
+          {redirect && "Never gonna give up Rickrolling you Matt"}
         </span>
       </h3>
     </header>
